@@ -34,7 +34,15 @@ $row = mysqli_fetch_assoc($result);
             letter-spacing: 2px;
         }
      tr,td {
-        padding-left: 30px;
+        padding-left: 50px;
+     }
+     a {
+      text-decoration: none;
+      color: black;
+     }
+     a:hover {
+       letter-spacing: 2px;
+       font-size: 8px;
      }
     </style>
     <center><br><br>
@@ -52,10 +60,9 @@ $row = mysqli_fetch_assoc($result);
       <?php  do {     ?>
       <tr>
          <td><a href="edit.php?id=<?php echo $row['id']; ?>">edit</a></td>
-            <form action="delete.php" method="post">
-          <td><a href="index.php?=<?php echo $row['id']; ?>">delete</a></td>
-          
-            </form>
+         
+          <td><a href="delete.php?id=<?php echo $row['id']; ?>">delete</a></td>
+
          <td> <?php echo $row['title']; ?> </td>
          <td> <?php echo $row['year']; ?> </td>
          <td> <?php echo $row['batch']; ?> </td>
@@ -64,6 +71,7 @@ $row = mysqli_fetch_assoc($result);
       <?php }while($row = mysqli_fetch_assoc($result)); ?>
    </table>
    </center>
+   <a href="add.php">ADD TITLE</a>
 </body>
 </html>
 
